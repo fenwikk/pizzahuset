@@ -1,7 +1,40 @@
 <script lang="ts">
-	const reviews: { author: string; message: string }[] = [];
+	const reviews: { author: string; message: string }[] = [
+		{
+			author: 'Karl-Olof',
+			message:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit libero modi tempore magnam sit perferendis veniam doloremque ea sequi ipsum impedit voluptatibus, inventore repudiandae vero, dicta nam laudantium quae distinctio.'
+		},
+		{
+			author: 'Britt-Marie',
+			message:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit libero modi tempore magnam sit perferendis veniam doloremque ea sequi ipsum impedit voluptatibus, inventore repudiandae vero, dicta nam laudantium quae distinctio.'
+		},
+		{
+			author: 'Kärstin',
+			message:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit libero modi tempore magnam sit perferendis veniam doloremque ea sequi ipsum impedit voluptatibus, inventore repudiandae vero, dicta nam laudantium quae distinctio.'
+		}
+	];
 
-	const openingHours: { weekday: string; time: string }[] = [];
+	const openingHours: { weekday: string; time: string }[] = [
+		{
+			weekday: 'Mån-Tors',
+			time: '11:00 - 21:00'
+		},
+		{
+			weekday: 'Fre',
+			time: '11:00 - 02:00'
+		},
+		{
+			weekday: 'Lör',
+			time: '12:00 - 02:00'
+		},
+		{
+			weekday: 'Sön',
+			time: '12:00 - 21:00'
+		}
+	];
 </script>
 
 <div class="absolute top-0 w-full">
@@ -17,9 +50,9 @@
 	<div class="container py-48 text-gray-100 flex flex-col gap-8">
 		<div class="flex flex-col gap-4">
 			<h1
-				class="text-3xl md:text-5xl xl:text-6xl text-center md:text-left text-puffin-primary font-heading uppercase font-bold"
+				class="text-3xl md:text-5xl xl:text-6xl text-center md:text-left text-white font-heading uppercase font-bold"
 			>
-				Välkommen till Växjös nya pizzeria. Vi serverar även indiska rätter.
+				Växjös nya pizzeria
 			</h1>
 
 			<p class="max-w-lg xl:max-w-xl text-center md:text-left">
@@ -75,7 +108,7 @@
 <div class="relative bg-puffin-primary">
 	<div class="container md:grid grid-cols-2 gap-16">
 		<div>
-			<div class="absolute left-0 w-1/2 h-full">
+			<div class="hidden md:block absolute left-0 w-1/2 h-full">
 				<div
 					class="w-full h-full bg-cover bg-center"
 					style="background-image: url('/order.jpg');"
@@ -143,7 +176,7 @@
 		<div>
 			{#if openingHours}
 				<h2 class="font-heading text-3xl mb-2">Öppetider</h2>
-				<div class="grid lg:grid-cols-3 gap-2">
+				<div class="grid lg:grid-cols-4 gap-2">
 					{#each openingHours as day}
 						<div class="flex flex-col">
 							<span>{day.weekday}</span>
